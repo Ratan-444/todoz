@@ -6,7 +6,7 @@ import './App.css';
 
 function App() {
     const [todos, setTodos] = useState([]);
-    const API_URL = 'https://todoz-backend-dzzhr2ds8-ratans-projects-bda0b515.vercel.app/api/todos';
+    const API_URL = 'https://todoz-backend-dzzhr2ds8-ratans-projects-bda0b515.vercel.app';
 
     // Add your API key or token here if authentication is required
     const token = 'YOUR_API_KEY_OR_TOKEN'; // Replace this with the actual token if needed
