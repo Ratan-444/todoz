@@ -6,10 +6,18 @@ import './App.css';
 
 function App() {
     const [todos, setTodos] = useState([]);
+    const API_URL = 'https://todoz-backend-dzzhr2ds8-ratans-projects-bda0b515.vercel.app/api/todos';
+
+    // Add your API key or token here if authentication is required
+    const token = 'YOUR_API_KEY_OR_TOKEN'; // Replace this with the actual token if needed
 
     const fetchTodos = async () => {
         try {
-            const response = await axios.get('https://todoz-backend-dzzhr2ds8-ratans-projects-bda0b515.vercel.app/api/todos');
+            const response = await axios.get(API_URL, {
+                headers: {
+                    'Authorization': `Bearer ${token}` // Include token if authentication is required
+                }
+            });
             setTodos(response.data);
         } catch (err) {
             console.error('Error fetching todos:', err);
@@ -18,7 +26,11 @@ function App() {
 
     const addTodo = async (task) => {
         try {
-            const response = await axios.post('https://todoz-backend-dzzhr2ds8-ratans-projects-bda0b515.vercel.app/api/todos', { task });
+            const response = await axios.post(API_URL, { task }, {
+                headers: {
+                    'Authorization': `Bearer ${token}` // Include token if authentication is required
+                }
+            });
             setTodos([...todos, response.data]);
         } catch (err) {
             console.error('Error adding todo:', err);
@@ -27,7 +39,11 @@ function App() {
 
     const deleteTodo = async (id) => {
         try {
-            await axios.delete(`https://todoz-backend-dzzhr2ds8-ratans-projects-bda0b515.vercel.app/api/todos/${id}`);
+            await axios.delete(`${API_URL}/${id}`, {
+                headers: {
+                    'Authorization': `Bearer ${token}` // Include token if authentication is required
+                }
+            });
             setTodos(todos.filter(todo => todo._id !== id));
         } catch (err) {
             console.error('Error deleting todo:', err);
