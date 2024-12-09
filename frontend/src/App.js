@@ -6,7 +6,7 @@ import './App.css';
 
 function App() {
     const [todos, setTodos] = useState([]);
-    const API_URL = 'https://todoz-backend.vercel.app';
+    const API_URL = 'https://todoz-backend.vercel.app/api/todos';
 
     const fetchTodos = async () => {
         try {
