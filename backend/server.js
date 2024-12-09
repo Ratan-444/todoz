@@ -12,6 +12,7 @@ const PORT = process.env.PORT || 5000;
 app.use(cors({
   origin: 'https://todoz-tkr9.vercel.app', // Allow your frontend's domain
   methods: ['GET', 'POST', 'DELETE', 'PUT'],  // Allow these methods
+  allowedHeaders: ['Content-Type', 'Authorization']  // Add required headers
 }));
 app.use(bodyParser.json());
 app.use('/api/todos', todoRoutes);
