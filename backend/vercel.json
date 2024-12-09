@@ -1,29 +1,15 @@
 {
-    // Specifies the version of the Vercel configuration format being used.
     "version": 2,
-
-    // A name for the project being deployed. It can be used to identify this project on Vercel's dashboard.
     "name": "music-album",
-
-    // Defines the build settings, including which files to use and the build framework.
     "builds": [
         {
-            // Specifies the entry file for the backend. This file (`app.js`) contains the Node.js server code.
             "src": "server.js",
-
-            // Indicates the builder to use. `@vercel/node` is used for Node.js serverless functions.
             "use": "@vercel/node"
         }
     ],
-
-    // Defines custom routing rules for handling incoming HTTP requests.
     "routes": [
         {
-            // Matches all incoming requests, regardless of the path or file name.
             "src": "/(.*)",
-
-            // Redirects all matched requests to the specified file (`app.js`), 
-            // ensuring that the backend logic handles all requests.
             "dest": "/app.js"
         }
     ]
