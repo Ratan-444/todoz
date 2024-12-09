@@ -14,7 +14,7 @@
   ],
   "functions": {
     "server.js": {
-      "maxDuration": 30  // Set the max duration (in seconds) to 30 seconds
+      "maxDuration": 30  
     }
   }
 }
