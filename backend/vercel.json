@@ -2,7 +2,7 @@
   "version": 2,
   "functions": {
     "server.js": {
-      "maxDuration": 30  // Increase timeout duration to 30 seconds
+      "maxDuration": 30  
     }
   },
   "routes": [
