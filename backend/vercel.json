@@ -1,6 +1,5 @@
 {
     "version": 2,
-    "name": "music-album",
     "builds": [
         {
             "src": "server.js",
@@ -9,8 +8,8 @@
     ],
     "routes": [
         {
-            "src": "/(.*)",
-            "dest": "/app.js"
+            "src": "/api/(.*)",
+            "dest": "/server.js"
         }
     ]
 }
