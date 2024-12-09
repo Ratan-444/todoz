@@ -1,20 +1,14 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "server.js",
-      "use": "@vercel/node"
+  "functions": {
+    "server.js": {
+      "maxDuration": 30  // Increase timeout duration to 30 seconds
     }
-  ],
+  },
   "routes": [
     {
       "src": "/api/(.*)",
       "dest": "/server.js"
     }
-  ],
-  "functions": {
-    "server.js": {
-      "maxDuration": 30  
-    }
-  }
+  ]
 }
